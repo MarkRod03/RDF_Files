@@ -1,0 +1,236 @@
+@prefix : <http://www.semanticweb.org/mark/ontologies/2025/2/Movies/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mark/ontologies/2025/2/Movies/> .
+
+<http://www.semanticweb.org/mark/ontologies/2025/2/Movies> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#directedBy
+:directedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :movie ;
+            rdfs:range :director .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#starring
+:starring rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :movie ;
+          rdfs:range :actor ,
+                     :actress .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdfs:domain :movie ;
+      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#actor
+:actor rdf:type owl:Class ;
+       rdfs:subClassOf :person .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#actress
+:actress rdf:type owl:Class ;
+         rdfs:subClassOf :person .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#director
+:director rdf:type owl:Class ;
+          rdfs:subClassOf :person .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#movie
+:movie rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#person
+:person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#EastOfEden
+:EastOfEden rdf:type owl:NamedIndividual ,
+                     :movie ;
+            :directedBy :EliaKazan ;
+            :starring :JamesDean ,
+                      :JoVanFleet ,
+                      :JulieHarris ;
+            :year "1955" ;
+            rdfs:label "East of Eden" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#EliaKazan
+:EliaKazan rdf:type owl:NamedIndividual ,
+                    :director ;
+           rdfs:label "Elia Kazan" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#ElizabethTaylor
+:ElizabethTaylor rdf:type owl:NamedIndividual ,
+                          :actress ;
+                 rdfs:label "Elizabeth Taylor" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#FredGuiol
+:FredGuiol rdf:type owl:NamedIndividual ,
+                    :director ;
+           rdfs:label "Fred Guiol" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#GeorgeCukor
+:GeorgeCukor rdf:type owl:NamedIndividual ,
+                      :director ;
+             rdfs:label "George Cukor" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#GeorgeStephens
+:GeorgeStephens rdf:type owl:NamedIndividual ,
+                         :director ;
+                rdfs:label "George Stephens" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#Giant
+:Giant rdf:type owl:NamedIndividual ,
+                :movie ;
+       :directedBy :FredGuiol ,
+                   :GeorgeStephens ;
+       :starring :ElizabethTaylor ,
+                 :JamesDean ,
+                 :RockHudson ;
+       :year "1956" ;
+       rdfs:label "Giant" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#ItShouldHappenToYou
+:ItShouldHappenToYou rdf:type owl:NamedIndividual ,
+                              :movie ;
+                     :directedBy :GeorgeCukor ;
+                     :starring :JackLemmon ,
+                               :JudyHoliday ,
+                               :PeterLawford ;
+                     :year "1954" ;
+                     rdfs:label "It Should Happen to You" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JackLemmon
+:JackLemmon rdf:type owl:NamedIndividual ,
+                     :actor ;
+            rdfs:label "Jack Lemmon" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JamesDean
+:JamesDean rdf:type owl:NamedIndividual ,
+                    :actor ;
+           rdfs:label "James Dean" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JeffreyHunter
+:JeffreyHunter rdf:type owl:NamedIndividual ,
+                        :actor ;
+               rdfs:label "Jeffrey Hunter" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JoVanFleet
+:JoVanFleet rdf:type owl:NamedIndividual ,
+                     :actress ;
+            rdfs:label "Jo Van Fleet" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JohnFord
+:JohnFord rdf:type owl:NamedIndividual ,
+                   :director ;
+          rdfs:label "John Ford" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JohnWayne
+:JohnWayne rdf:type owl:NamedIndividual ,
+                    :actor ;
+           rdfs:label "John Wayne" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JudyHoliday
+:JudyHoliday rdf:type owl:NamedIndividual ,
+                      :actress ;
+             rdfs:label "Judy Holiday" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#JulieHarris
+:JulieHarris rdf:type owl:NamedIndividual ,
+                      :actress ;
+             rdfs:label "Julie Harris" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#NatalieWood
+:NatalieWood rdf:type owl:NamedIndividual ,
+                      :actress ;
+             rdfs:label "Natalie Wood" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#NicholasRay
+:NicholasRay rdf:type owl:NamedIndividual ,
+                      :director ;
+             rdfs:label "Nicholas Ray" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#PeterLawford
+:PeterLawford rdf:type owl:NamedIndividual ,
+                       :actor ;
+              rdfs:label "Peter Lawford" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#RebelWithoutACause
+:RebelWithoutACause rdf:type owl:NamedIndividual ,
+                             :movie ;
+                    :directedBy :NicholasRay ;
+                    :starring :JamesDean ,
+                              :NatalieWood ,
+                              :SalMineo ;
+                    :year "1955" ;
+                    rdfs:label "Rebel Without a Cause" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#RockHudson
+:RockHudson rdf:type owl:NamedIndividual ,
+                     :actor ;
+            rdfs:label "Rock Hudson" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#SalMineo
+:SalMineo rdf:type owl:NamedIndividual ,
+                   :actor ;
+          rdfs:label "Sal Mineo" .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/2/Movies#TheSearchers
+:TheSearchers rdf:type owl:NamedIndividual ,
+                       :movie ;
+              :directedBy :JohnFord ;
+              :starring :JeffreyHunter ,
+                        :JohnWayne ,
+                        :NatalieWood ;
+              :year "1956" ;
+              rdfs:label "The Searchers" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
