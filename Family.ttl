@@ -1,0 +1,171 @@
+@prefix : <http://www.semanticweb.org/mark/ontologies/2025/3/Family/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/mark/ontologies/2025/3/Family/> .
+
+<http://www.semanticweb.org/mark/ontologies/2025/3/Family> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasBrother
+:hasBrother rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasSibling ;
+            owl:inverseOf :isBrotherOf ;
+            rdfs:domain :person ;
+            rdfs:range :man .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasDaughter
+:hasDaughter rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isParentOf ;
+             owl:inverseOf :isDaughterOf ;
+             rdfs:domain :person ;
+             rdfs:range :woman .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasFather
+:hasFather rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           owl:inverseOf :isFatherOf ;
+           rdfs:domain :person ;
+           rdfs:range :man .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasMother
+:hasMother rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasParent ;
+           owl:inverseOf :isMotherOf ;
+           rdfs:domain :person ;
+           rdfs:range :woman .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasParent
+:hasParent rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isParentOf .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasSibling
+:hasSibling rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasSister
+:hasSister rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasSibling ;
+           owl:inverseOf :isSisterOf ;
+           rdfs:domain :person ;
+           rdfs:range :woman .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#hasSon
+:hasSon rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :isParentOf ;
+        owl:inverseOf :isSonOf ;
+        rdfs:domain :person ;
+        rdfs:range :man .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isBrotherOf
+:isBrotherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isSiblingOf .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isDaughterOf
+:isDaughterOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasParent .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isFatherOf
+:isFatherOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isParentOf .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isMotherOf
+:isMotherOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isParentOf .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isParentOf
+:isParentOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isSiblingOf
+:isSiblingOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isSisterOf
+:isSisterOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isSiblingOf .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#isSonOf
+:isSonOf rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasParent .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#man
+:man rdf:type owl:Class ;
+     rdfs:subClassOf :person .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#person
+:person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#woman
+:woman rdf:type owl:Class ;
+       rdfs:subClassOf :person .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#Bob
+:Bob rdf:type owl:NamedIndividual ,
+              :man ;
+     :hasSon :John .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#Elizabeth
+:Elizabeth rdf:type owl:NamedIndividual ,
+                    :woman ;
+           :hasDaughter :Mary ;
+           :isMotherOf :John .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#Jim
+:Jim rdf:type owl:NamedIndividual ,
+              :man ;
+     :hasBrother :John .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#John
+:John rdf:type owl:NamedIndividual ,
+               :man .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#Mary
+:Mary rdf:type owl:NamedIndividual ,
+               :woman .
+
+
+###  http://www.semanticweb.org/mark/ontologies/2025/3/Family#Sophia
+:Sophia rdf:type owl:NamedIndividual ,
+                 :woman ;
+        :hasBrother :Jim .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
